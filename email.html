@@ -274,6 +274,12 @@
   </style>
 </head>
 <body class="">
+{% macro field(name, value='', type='text') %}
+<div class="field">
+  <input type="{{ type }}" name="{{ name }}"
+         value="{{ value | escape }}" />
+</div>
+{% endmacro %}
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
   <tr>
     <td>&nbsp;</td>
@@ -287,6 +293,9 @@
                   <td>
                     <h2>There is a new submission for {{ form.title }}.</h2>
                     <p>{{ content }}</p>
+                    <br/>
+                    <p>I hope this works</p>
+                    {{ field('user') }}
                   </td>
                 </tr>
               </table>
